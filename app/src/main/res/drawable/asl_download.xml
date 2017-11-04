@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/loading"
+        android:drawable="@drawable/avd_download_loading"
+        app:state_loading="true"/>
+
+    <item
+        android:id="@+id/success"
+        android:drawable="@drawable/vd_download_success"
+        app:state_success="true"/>
+
+    <item
+        android:id="@+id/initial"
+        android:drawable="@drawable/vd_download_initial"/>
+
+    <transition
+        android:drawable="@drawable/avd_download_transition_initial_to_loading"
+        android:fromId="@id/initial"
+        android:toId="@id/loading"/>
+
+    <transition
+        android:drawable="@drawable/avd_download_transition_loading_to_success"
+        android:fromId="@id/loading"
+        android:toId="@id/success"/>
+
+</animated-selector>

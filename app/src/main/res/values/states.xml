@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="DownloadState">
+        <attr name="state_initial" format="boolean"/>
+        <attr name="state_loading" format="boolean"/>
+        <attr name="state_success" format="boolean"/>
+    </declare-styleable>
+
+</resources>

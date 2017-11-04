@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:width="24dp"
+            android:height="24dp"
+            android:viewportHeight="24"
+            android:viewportWidth="24">
+            <path
+                android:name="success"
+                android:pathData="M 17 9 L 11 15 L 7 11"
+                android:strokeColor="@color/upload_state_color_primary"
+                android:strokeWidth="2"
+                android:trimPathEnd="0"/>
+            <path
+                android:name="path_to_success"
+                android:pathData="M 12 4 C 16 4.1 20 6 16.95 9.05"
+                android:strokeColor="@color/upload_state_color_loading"
+                android:strokeWidth="2"
+                android:trimPathEnd="0.16"/>
+        </vector>
+    </aapt:attr>
+    <target android:name="path_to_success">
+        <aapt:attr name="android:animation">
+            <set xmlns:android="http://schemas.android.com/apk/res/android">
+                <objectAnimator
+                    android:duration="200"
+                    android:interpolator="@android:anim/linear_interpolator"
+                    android:propertyName="trimPathEnd"
+                    android:valueFrom="0.16"
+                    android:valueTo="1"
+                    android:valueType="floatType"/>
+                <objectAnimator
+                    android:duration="200"
+                    android:interpolator="@android:anim/linear_interpolator"
+                    android:propertyName="trimPathStart"
+                    android:startOffset="150"
+                    android:valueFrom="0"
+                    android:valueTo="1"
+                    android:valueType="floatType"/>
+                <objectAnimator
+                    android:duration="200"
+                    android:interpolator="@android:anim/linear_interpolator"
+                    android:propertyName="strokeColor"
+                    android:valueFrom="@color/upload_state_color_loading"
+                    android:valueTo="@color/upload_state_color_primary"
+                    android:valueType="colorType"/>
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="success">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:duration="300"
+                android:interpolator="@android:interpolator/linear_out_slow_in"
+                android:propertyName="trimPathEnd"
+                android:startOffset="200"
+                android:valueFrom="0"
+                android:valueTo="1"
+                android:valueType="floatType"/>
+        </aapt:attr>
+    </target>
+</animated-vector>

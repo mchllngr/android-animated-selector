@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:width="24dp"
+            android:height="24dp"
+            android:viewportHeight="24"
+            android:viewportWidth="24">
+            <path
+                android:name="initial_top"
+                android:pathData="M 12 6 L 12 10.1"
+                android:strokeColor="@color/upload_state_color_primary"
+                android:strokeWidth="4"/>
+            <path
+                android:name="initial_bottom"
+                android:fillColor="@color/upload_state_color_primary"
+                android:pathData="M 8 10 L 16 10 L 12 15 Z"/>
+            <path
+                android:name="initial_line"
+                android:pathData="M 16 17 L 8 17"
+                android:strokeColor="@color/upload_state_color_primary"
+                android:strokeWidth="2"/>
+            <path
+                android:name="path_to_loading"
+                android:pathData="M 8.1 17 C 2 17 3 2.6 13.5 4.15"
+                android:strokeColor="@color/upload_state_color_primary"
+                android:strokeWidth="2"
+                android:trimPathEnd="0"/>
+        </vector>
+    </aapt:attr>
+    <target android:name="initial_top">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:duration="150"
+                android:interpolator="@android:interpolator/fast_out_linear_in"
+                android:propertyName="trimPathStart"
+                android:valueFrom="0"
+                android:valueTo="1"
+                android:valueType="floatType"/>
+        </aapt:attr>
+    </target>
+    <target android:name="initial_bottom">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:duration="200"
+                android:interpolator="@android:interpolator/linear_out_slow_in"
+                android:propertyName="pathData"
+                android:startOffset="150"
+                android:valueFrom="M 8 10 L 16 10 L 12 15 Z"
+                android:valueTo="M 12 15 L 12 15 L 12 15 Z"
+                android:valueType="pathType"/>
+        </aapt:attr>
+    </target>
+    <target android:name="path_to_loading">
+        <aapt:attr name="android:animation">
+            <set xmlns:android="http://schemas.android.com/apk/res/android">
+                <objectAnimator
+                    android:duration="300"
+                    android:interpolator="@android:interpolator/linear_out_slow_in"
+                    android:propertyName="trimPathEnd"
+                    android:startOffset="150"
+                    android:valueFrom="0"
+                    android:valueTo="1"
+                    android:valueType="floatType"/>
+                <objectAnimator
+                    android:duration="300"
+                    android:interpolator="@android:interpolator/linear_out_slow_in"
+                    android:propertyName="trimPathStart"
+                    android:startOffset="300"
+                    android:valueFrom="0"
+                    android:valueTo="0.93"
+                    android:valueType="floatType"/>
+                <objectAnimator
+                    android:duration="150"
+                    android:interpolator="@android:anim/linear_interpolator"
+                    android:propertyName="strokeColor"
+                    android:startOffset="450"
+                    android:valueFrom="@color/upload_state_color_primary"
+                    android:valueTo="@color/upload_state_color_loading"
+                    android:valueType="colorType"/>
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="initial_line">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:duration="150"
+                android:interpolator="@android:interpolator/fast_out_linear_in"
+                android:propertyName="trimPathStart"
+                android:startOffset="100"
+                android:valueFrom="0"
+                android:valueTo="1"
+                android:valueType="floatType"/>
+        </aapt:attr>
+    </target>
+</animated-vector>

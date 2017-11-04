@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportHeight="24"
+    android:viewportWidth="24">
+
+    <path
+        android:name="success"
+        android:pathData="M 17 9 L 11 15 L 7 11"
+        android:strokeColor="@color/upload_state_color_primary"
+        android:strokeWidth="2"/>
+
+</vector>
